@@ -1,0 +1,28 @@
+  
+  {
+  // To install all: Navigate to "Extensions", filter extensions using "Recommended" filter
+
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    "christian-kohler.npm-intellisense",
+    "stylelint.vscode-stylelint",
+    "ms-azuretools.vscode-docker",
+    // "nur.just-black",
+    "vscode-icons-team.vscode-icons",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "quicktype.quicktype",
+    "vunguyentuan.vscode-postcss",
+    "streetsidesoftware.code-spell-checker",
+    "yoavbls.pretty-ts-errors",
+    "rangav.vscode-thunder-client",
+    "dsznajder.es7-react-js-snippets",
+    "GitHub.vscode-github-actions",
+    "bradlc.vscode-tailwindcss",
+    // "natqe.reload"
+    // "mikestead.dotenv"
+    // "EditorConfig.EditorConfig"
+  ],
+    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+    "unwantedRecommendations": []
+}
