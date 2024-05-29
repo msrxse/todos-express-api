@@ -4,6 +4,9 @@
   "cSpell.enableFiletypes": [
     "mdx"
   ],
+  "cSpell.userWords": [
+    "todos",
+  ],
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.detectIndentation": true,
   // "editor.fontFamily": "Cartograph CF",

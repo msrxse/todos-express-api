@@ -57,3 +57,77 @@ npm run test
 ```
 npm run dev
 ```
+
+API will be available at `http://localhost:4000/`
+
+## Notes
+
+### How to know if specific libraries have built-in typescript declarations
+- To see wether you need specific package for types for, for example, Zod: 
+1. Visit `https://www.npmjs.com/package/zod` and if the title contains the Typescript logo in solid blue background it means that the package already contains type information. If instead logo has a white background then it means theres no types included and you most def will need a dedicated package
+- For example, Express has its types in a different package @types.express
+- Hovering over the Typescript icon will tell you as well
+
+
+### Repository for type definitions
+- Users already have made all the work of submitting type definitions for mosts libs here: `https://definitelytyped.org/`
+
+### Structure of folders
+- Every feature will have ots own folder: All routes, models, schemas, validations, custom fns, interfaces, and anything related to each feature will reside on /api/<feature-name> folders. Instead of the more traditional having model, schema and handler folders and so you will have everything related to a feature within a singular folder.
+
+
+### MongoDB Docker Container
+
+Starting up
+```
+docker compose up -d
+```
+
+To verify the installation. We can access the database by logging into the container
+
+```
+docker ps // get container-id from output
+docker exec -it {CONTAINER _ID} mongosh
+```
+After logging into the db, we use db.auth to authenticate the access by providing the credentials defined using environment variables. For all successful authentications, we’ll get the response code 1
+
+``` 
+test> use admin
+switched to db admin
+admin> db.auth('todos-express-user', 'todos-express-psswd')
+{ ok: 1 }
+
+```
+Now, we can perform day-to-day CRUD operations
+
+
+```
+> show dbs
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+>
+> use new-db
+switched to db new-db
+> db.articles.insert({"name":"linux"})
+WriteResult({ "nInserted" : 1 })
+> show dbs
+admin     0.000GB
+new-db  0.000GB
+config    0.000GB
+local     0.000GB
+> db
+new-db
+> show collections
+articles
+> db.articles.find()
+{ "_id" : ObjectId("62b8fc643860119dcc5e1e76"), "name" : "linux" }
+{ "_id" : ObjectId("62b8fd133860119dcc5e1e77"), "name" : "java" }
+>
+exit
+```
+
+Connection String
+```
+mongodb://todos-express-user:todos-express-psswd@localhost:27017/admin
+```
