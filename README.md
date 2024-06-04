@@ -78,6 +78,7 @@ Development utilities:
 - Every feature will have ots own folder: All routes, models, schemas, validations, custom fns, interfaces, and anything related to each feature will reside on /api/<feature-name> folders. Instead of the more traditional having model, schema and handler folders and so you will have everything related to a feature within a singular folder.
 
 
+
 ### MongoDB Docker Container
 
 Starting up
@@ -134,3 +135,7 @@ Connection String
 mongodb://todos-express-user:todos-express-psswd@localhost:27017/admin
 ```
 
+
+### Useful links
+- [goldbergyoni/nodebestpractices](https://github.com/goldbergyoni/nodebestpractices)
+- [Express API Starter with Typescript](https://github.com/CodingGarden/intro-to-typescript/tree/examples/examples/express-api)
