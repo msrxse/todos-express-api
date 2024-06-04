@@ -13,6 +13,7 @@ const router = Router();
 
 // another way to write above
 router.get('/', TodoHandlers.findAll);
+router.post('/', TodoHandlers.createOne);
 
 export default router;
 

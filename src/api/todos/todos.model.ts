@@ -3,7 +3,13 @@ import * as z from "zod";
 import { db } from '../../db';
 import { WithId } from "mongodb";
 
-const Todo = z.object({
+/**
+ * In typescript
+ * You are allowed to export 2 things with the same name if:
+ *  - one is a type 
+ *  - the other is the schema validator
+ */
+export const Todo = z.object({
   content: z.string().min(1),
   done: z.boolean().default(false),
 });
