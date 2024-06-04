@@ -1,5 +1,7 @@
 import { Router } from "express";
 import * as TodoHandlers from './todos.handlers';
+import { Todo } from "./todos.model";
+import { validateRequest } from "../../middlewares";
 
 const router = Router();
 
@@ -10,10 +12,13 @@ const router = Router();
 //     done:false,
 //   }]);
 // });
-
 // another way to write above
 router.get('/', TodoHandlers.findAll);
-router.post('/', TodoHandlers.createOne);
+router.post(
+  '/',
+  validateRequest({ body: Todo }), // middleware ensures body is of type Todo!
+  TodoHandlers.createOne,
+);
 
 export default router;
 
