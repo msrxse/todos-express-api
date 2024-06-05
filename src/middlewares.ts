@@ -19,7 +19,7 @@ export function validateRequest(validators:RequestValidators) {
         req.params = await validators.params.parseAsync(req.params);
       }
       if (validators.body) {
-        // here we override our body with the validated version of it - so it is safe to use form here on
+        // here we override our body with the validated version of it - so it is safe to use from here on
         req.body = await validators.body.parseAsync(req.body);
       }
       if (validators.query) {
