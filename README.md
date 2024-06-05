@@ -31,7 +31,10 @@ Ensure MongoDB is running with
 ```sh
 docker compose up -d
 ```
-
+### Todos
+- [ ] Create a data access layer
+- [ ] Refactor into controllers and services
+- [ ] Build client in React with TypeScript
 
 
 ## Included API Server utilities:
